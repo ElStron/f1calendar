@@ -1,0 +1,44 @@
+<script type="module">
+    import { io } from "https://cdn.socket.io/4.6.2/socket.io.esm.min.js" 
+    const socket = io("ws://localhost:3000", {
+        transports: ["websocket"],
+    });
+
+
+    const filas = document.querySelectorAll(".fila");
+    const cronologia = document.querySelector('.crono')
+    const emitShangePosition = (typeChange, racer, position) => {
+        socket.emit("Change position", typeChange, racer, position);
+    }
+
+    socket.on("Change position", (typeChange, racer, position) => {
+        const typeChangeEvent = typeChange === 'up' ? 'won' : 'lost'
+        let leader = ""
+        if(Number(position) === 1 ) {
+            leader = `${racer} is a new leader`
+        }
+        const newEvent = `<span>${racer} ${typeChangeEvent} a position. 
+            New position is ${position}. <strong>${leader}</strong></span>`;
+            
+        cronologia.insertAdjacentHTML('afterbegin',newEvent)
+    })
+
+    filas.forEach((fila) =>{
+        
+        const botonUp = fila.querySelector('.boton-subir')
+        const botonDown = fila.querySelector('.boton-bajar')
+        const racer = fila.querySelector('.racer').textContent
+        const position = fila.querySelector('.posicion').textContent
+
+        botonDown.addEventListener('click', (e) =>{
+            e.preventDefault()
+            emitShangePosition('down', racer, Number(position) + 1)
+        })
+
+        botonUp.addEventListener('click', (e) => {
+            e.preventDefault()
+            emitShangePosition('up', racer, Number(position) - 1)
+        })
+    })
+
+</script>

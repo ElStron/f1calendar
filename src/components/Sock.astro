@@ -1,0 +1,22 @@
+<script type="module">
+    import { io } from "https://cdn.socket.io/4.6.2/socket.io.esm.min.js" 
+    const socket = io("ws://localhost:3000", {
+        transports: ["websocket"],
+    });
+
+    const cronologia = document.querySelector('.crono')
+
+    socket.on("Change position", (typeChange, racer, position) => {
+        const typeChangeEvent = typeChange === 'up' ? 'won' : 'lost'
+        const iconPosition = typeChange === 'up' ? '▲' : '▼'
+        let leader = ""
+        if(Number(position) === 1 ) {
+            leader = `${racer} is a new leader`
+        }
+        const newEvent = `<span> <span>${iconPosition}</span>${racer} ${typeChangeEvent} a position. 
+            New position is ${position}. <strong>${leader}</strong></span>`;
+            
+        cronologia.insertAdjacentHTML('afterbegin',newEvent)
+    })
+
+</script>
