@@ -1,0 +1,13 @@
+---
+interface Props {
+	racerName: string;
+	position: string;
+}
+
+const { racerName, position } = Astro.props;
+---
+
+<tr class="fila">
+    <td class="posicion">{position}</td>
+    <td class="racer">{racerName}</td>
+</tr>
