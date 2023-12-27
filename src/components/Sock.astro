@@ -1,6 +1,10 @@
+---
+import { SOCKET_URL } from "../consts";
+---
+<div class="socketURL" data-url={SOCKET_URL}></div>
 <script type="module">
     import { io } from "https://cdn.socket.io/4.6.2/socket.io.esm.min.js" 
-    const socket = io("ws://localhost:3000", {
+    const socket = io(document.querySelector('.socketURL').dataset.url, {
         transports: ["websocket"],
     });
 
