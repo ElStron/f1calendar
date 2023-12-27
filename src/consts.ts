@@ -1,1 +1,1 @@
-export const SOCKET_URL = 'https://race.f1calendar.live/'
+export const SOCKET_URL = 'wss//localhost:3000'
