@@ -7,7 +7,7 @@ interface Props {
 const { racerName, position } = Astro.props;
 ---
 
-<tr class="fila">
-    <td class="posicion">{position}</td>
-    <td class="racer">{racerName}</td>
-</tr>
+<li class="fila">
+    <span class="posicion">{position}</span>
+    <p class="racer">{racerName}</p>
+</li>

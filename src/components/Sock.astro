@@ -1,22 +1,35 @@
 <script type="module">
     import { io } from "https://cdn.socket.io/4.6.2/socket.io.esm.min.js" 
-    const socket = io("https://race.f1calendar.live/", {
+    const socket = io("ws://localhost:3000", {
         transports: ["websocket"],
     });
 
-    const cronologia = document.querySelector('.crono')
+    const cronologia = document.querySelector('.crono');
+    let list = true;
 
-    socket.on("Change position", (typeChange, racer, position) => {
-        const typeChangeEvent = typeChange === 'up' ? 'won' : 'lost'
-        const iconPosition = typeChange === 'up' ? '▲' : '▼'
-        let leader = ""
-        if(Number(position) === 1 ) {
-            leader = `${racer} is a new leader`
+    const updateEvents = (data) => {
+
+        const typeChangeEvent = data.changeType === 'up' ? 'won' : 'lost';
+        const iconPosition = data.changeType === 'up' ? '<span class="iconEventUp">▲</span>' : '<span class="iconEventDown">▼</span>';
+        let leader = "";
+        if(Number(data.position) === 1 ) {
+            leader = `${data.racer} is a new leader`;
         }
-        const newEvent = `<span> <span>${iconPosition}</span>${racer} ${typeChangeEvent} a position. 
-            New position is ${position}. <strong>${leader}</strong></span>`;
-            
-        cronologia.insertAdjacentHTML('afterbegin',newEvent)
+        const newEvent = `<li> ${iconPosition} ${data.racer} ${typeChangeEvent} a position. 
+            New position is ${data.position}. <strong>${leader}</strong></li>`;
+        
+        cronologia.insertAdjacentHTML('afterbegin',newEvent);
+        
+    } 
+
+    socket.on("events", (events, singleEvent) => {
+        if (list) {
+            events.reverse().map((event) => {
+                updateEvents(event);
+            })
+            list = false
+        }
+        if(singleEvent) updateEvents(singleEvent);
     })
 
 </script>

@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 interface Props {
 	title: string;
 }
@@ -17,7 +19,11 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<div class="layoutContainer">
+			<Header/>
+			<slot />
+			<Footer/>
+		</div>
 	</body>
 </html>
 <style is:global>
@@ -31,11 +37,28 @@ const { title } = Astro.props;
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
+		--background-gradient:background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+		--background:#13151a;
+		--color:white;
 	}
-	html {
+	* {
+    	box-sizing: border-box;
+	}
+
+	body {
+		color: var(--color);
+		background: var(--background);
 		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+	}
+
+	body::after {
+		content: "";
+		width: 230px;
+		height: 400px;
+		background-color: var(--background-gradient);
+	}
+	a, p, a:visited {
+		color: var(--color);
 	}
 	code {
 		font-family:
@@ -49,6 +72,35 @@ const { title } = Astro.props;
 			monospace;
 	}
 	main {
-		color: aliceblue;
+		margin: 24px;
+	}
+
+	.layoutContainer {
+		display: grid;
+		margin: 0 auto;
+		max-width: 1200px;
+		height: 100vh;
+		grid-template-rows: 45px 1fr 45px;
+		grid-gap: 25px;
+	}
+
+
+	ul, li, h1,h2, h3, a, p, span {
+		margin: 0;
+		padding: 0;
+		text-decoration: none;
+		list-style: none;
+	}
+
+	.container {
+    	display: grid;
+    	grid-template-columns: 1fr 374px;
+		grid-gap:24px;
+	}
+	@media (width < 700px)  {
+		.container {
+			grid-template-columns: 1fr ;
+			grid-gap:40px;
+		}
 	}
 </style>

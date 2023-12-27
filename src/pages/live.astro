@@ -10,6 +10,7 @@ import FilaTable from '../components/filaTable.astro';
         <h1>Live</h1>
         <div class="container">
           <section class="onboard">
+            <h2>Positions table</h2>
             <Table>
               <FilaTable racerName='Sergio Perez' position='1'/>
               <FilaTable racerName='Lewis Hammilton' position='2'/>
@@ -17,17 +18,43 @@ import FilaTable from '../components/filaTable.astro';
               <FilaTable racerName='Ocon Nos' position='4'/>
             </Table>
           </section> 
-          <section class="crono">
+          <section>
+            <h2>Live Events</h2>
+            <div>
+              <ul class="crono">
+              </ul>
+            </div>
           </section>
         </div>
     </main>
 </Layout>
 <Sock />
 
-<style>
+<style is:inline>
     .crono {
         display: grid;
         grid-row-gap: 20px;
         margin-top: 39px;
+    }
+    .crono li {
+      list-style: none;
+      padding: 10px;
+      background-color: rgb(49 55 70 / 26%);
+      border-radius: 10px;
+    }
+    .crono li:first-child {
+      background: rgb(0 188 212 / 11%);
+      border: solid 1px rgb(0 188 212 / 17%);
+    }
+    .iconEventUp {
+      color: green;
+    }
+
+    .iconEventDown {
+      color: red;
+    }
+
+    .iconEventDown, .iconEventUp {
+      padding: 10px;
     }
 </style>

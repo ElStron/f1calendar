@@ -1,0 +1,55 @@
+<header class="main-header">
+    <div class="navbar_container">
+        <a class="mh-logo" href="/">
+            F1 Calendar
+        </a>
+        <nav class="main-nav">
+            <ul class="main-nav-list">
+                <li><a href="/live">Live</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<style>
+    .main-header .navbar_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 1470px;
+    }
+    .navbar_container {
+        padding: 0px 22px;
+        margin: 0 auto;
+    }
+    .main-nav ul {
+        margin: 1em 0 0.5em;
+        text-align: center;
+    }
+    .main-nav li {
+        display: inline;
+    }
+    .main-nav a {
+        display: inline-block;
+        padding: 0.5em 1.5em;
+    }
+
+    .main-nav a {
+        font-size: 0.75em;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+    }
+    a.mh-logo {
+        font-size: x-large;
+        font-weight: 700;
+        background-image: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400%;
+        background-position: 0%;
+    }
+</style>

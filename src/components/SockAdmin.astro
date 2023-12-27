@@ -1,15 +1,18 @@
 <script type="module">
     import { io } from "https://cdn.socket.io/4.6.2/socket.io.esm.min.js" 
-    const socket = io("https://race.f1calendar.live/", {
+    const socket = io("ws://localhost:3000", {
         transports: ["websocket"],
     });
 
 
     const filas = document.querySelectorAll(".fila");
     const cronologia = document.querySelector('.crono')
-    const emitShangePosition = (typeChange, racer, position) => {
-        socket.emit("Change position", typeChange, racer, position);
+
+    const emitShangePosition = (changeType, racer, position) => {
+        const data = { changeType, racer, position };
+        socket.emit("events", data);
     }
+
 
     socket.on("Change position", (typeChange, racer, position) => {
         const typeChangeEvent = typeChange === 'up' ? 'won' : 'lost'

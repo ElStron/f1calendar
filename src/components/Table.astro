@@ -1,12 +1,49 @@
 
-<table>
-    <thead>
-    <tr>
-        <th>Posición</th>
-        <th>Corredor</th>
-    </tr>
-    </thead>
-    <tbody>
+<fieldset class="table">
+    <ul>
         <slot />
-    </tbody>
-</table>
+    </ul>
+</fieldset>
+
+<style is:inline>
+    .table {
+        margin-top: 24px;
+        margin-bottom: 10px;
+        padding-left: 0;
+        background-color: #1a1e25;
+        border-radius: 10px;
+        width: 100%;
+        border: none;
+    }
+    span.posicion {
+        padding: 11px;
+        width: 31px;
+        background: rgb(19 21 26 / 28%);
+        border-right: solid 1px #ffffff17;
+        margin-top: 0;
+    }
+    .table ul {
+        padding: 10px;
+        padding-left: 0;
+        border-radius: 38px;
+        overflow: hidden;
+    }
+    li.fila {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        grid-column-gap: 17px;
+        align-items: center;
+    }
+
+    li.fila:hover {
+        background: rgb(156 244 255 / 6%);
+    }
+    li.fila:is(:hover, :focus-within) {
+		background-position: 0;
+		background-image: var(--accent-gradient);
+	}
+	li.fila:is(:hover, :focus-within) h2 {
+		color: rgb(var(--accent-light));
+	}
+</style>
