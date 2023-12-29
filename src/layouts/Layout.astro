@@ -37,8 +37,8 @@ const { title } = Astro.props;
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
-		--background-gradient:background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-		--background:#13151a;
+		--background-gradient:linear-gradient(to right, #9C27B0 0%, #00f2fe 100%);
+		--background:#161a25;
 		--color:white;
 	}
 	* {
@@ -52,11 +52,18 @@ const { title } = Astro.props;
 		margin: 0;
 	}
 
-	body::after {
+	body:after {
 		content: "";
-		width: 230px;
-		height: 400px;
-		background-color: var(--background-gradient);
+		position: absolute;
+		width: 195px;
+		height: 151px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border-radius: 50%;
+		background: var(--background-gradient);
+		z-index: -4;
+		filter: blur(245px);
 	}
 	a, p, a:visited {
 		color: var(--color);

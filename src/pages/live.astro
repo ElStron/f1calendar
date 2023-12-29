@@ -21,7 +21,7 @@ import Loading from '../components/icons/loading.astro';
           </section> 
           <section>
             <h2  class="text-gradient" >Live Events</h2>
-            <div>
+            <div class="events-container">
               <ul class="crono">
                 <Loading/>
               </ul>
@@ -50,14 +50,28 @@ import Loading from '../components/icons/loading.astro';
       border: solid 1px rgb(0 188 212 / 17%);
     }
     .iconEventUp {
-      color: green;
+      color: #4caf50;
     }
 
     .iconEventDown {
-      color: red;
+      color: #E91E63;
     }
 
     .iconEventDown, .iconEventUp {
       padding: 10px;
+    }
+
+    .events-container {
+      max-height: 67vh;
+      overflow-y: auto;
+    }
+    .events-container::-webkit-scrollbar {
+      width: 9px;
+      height: 2px;
+      opacity: 0;
+    }
+    .events-container::-webkit-scrollbar-thumb:hover {
+      background: #5233db;
+      box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
     }
 </style>
