@@ -54,7 +54,7 @@ import Logo from '../components/icons/Logo.astro'
         height: auto;
     }
 
-    ul.main-nav-list li.online:before,.offlive::before {
+    ul.main-nav-list li.online:before,.offline::before {
         content: "";
         position: absolute;
         width: 10px;
@@ -62,11 +62,11 @@ import Logo from '../components/icons/Logo.astro'
         right: 0;
         
     }
-    ul.main-nav-list li.online:before {
+    ul.main-nav-list li.offline:before {
         border-radius: 10px;
         background: #494949;
     }
-    .offline::before {
+    .online::before {
         aspect-ratio: 1;
         border-radius: 50%;
         background: #E91E63;
