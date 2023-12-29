@@ -1,3 +1,58 @@
+---
+import Twitter from "./icons/Twitter.astro";
+import Instagram from "./icons/Instagram.astro";
+import Logo from "./icons/Logo.astro";
+---
+
 <footer>
-    Hola mundo, soy un footer
+    <section class="social_media">
+        <a href="#"><Twitter/></a>
+        <a href="#"><Instagram/></a>
+    </section>
+    <section class="legal">
+        <ul>
+            <li>
+                <a href="#">Aviso Legal</a> 
+            </li>
+            <li>
+                <a href="#">Cookies</a>
+            </li>
+        </ul>
+    </section>
+    <section class="credits">
+        <p>
+            This website is an independent source of information about Formula 1. It is not officially affiliated with or endorsed by Formula 1.
+        </p>
+    </section>
 </footer>
+
+<style>
+    footer {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 25px;
+    background: #0a0c124d;
+    }
+
+    footer>section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        height: auto;
+    }
+
+    section.credits p {
+        font-size: 15px;
+        max-width: 350px;
+        color: white;
+        opacity: 0.7;
+    }
+
+    section.legal li {
+        display: inline-block;
+        padding-left: 15px;
+    }
+</style>

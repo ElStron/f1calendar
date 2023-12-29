@@ -80,15 +80,16 @@ const { title, description } = Astro.props;
 			monospace;
 	}
 	main {
-		margin: 24px;
+		max-width: 1380px;
+		width: 100%;
+		margin: 0 auto;
+		height: 100vh;
 	}
 
 	.layoutContainer {
 		display: grid;
 		margin: 0 auto;
-		max-width: 1200px;
-		height: 100vh;
-		grid-template-rows: auto 1fr 45px;
+		grid-template-rows: auto 1fr auto;
 		grid-gap: 25px;
 	}
 
@@ -112,6 +113,10 @@ const { title, description } = Astro.props;
 		background-size: 75%;
 		background-position: 0%;
 	}
+	.size-6 {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
 
 	@media (width < 700px)  {
 		.container {
