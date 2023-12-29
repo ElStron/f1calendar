@@ -37,9 +37,10 @@ const { title, description } = Astro.props;
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
-		--background-gradient:linear-gradient(to right, #9C27B0 0%, #00f2fe 100%);
-		--background:#161a25;
+		--background-gradient:linear-gradient(to right, #9C27B0 0%, #001bfe 100%);
+		--background:#0e1018;
 		--color:white;
+		--background-opacity:rgb(255 255 255 / 18%);
 	}
 	* {
     	box-sizing: border-box;
@@ -55,15 +56,15 @@ const { title, description } = Astro.props;
 	body:after {
 		content: "";
 		position: absolute;
-		width: 195px;
-		height: 151px;
-		top: 50%;
+		width: 83%;
+		height: 98px;
+		top: 3%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%,-50%);
 		border-radius: 50%;
 		background: var(--background-gradient);
 		z-index: -4;
-		filter: blur(245px);
+		filter: blur(149px);
 	}
 	a, p, a:visited {
 		color: var(--color);
@@ -85,6 +86,7 @@ const { title, description } = Astro.props;
 		margin: 0 auto;
 		height: 100vh;
 		padding: 0 25px;
+		margin-top: 45px;
 	}
 
 	.layoutContainer {
