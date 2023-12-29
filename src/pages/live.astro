@@ -4,9 +4,16 @@ import Sock from '../components/Sock.astro';
 import Table from '../components/Table.astro';
 import FilaTable from '../components/FilaTable.astro';
 import Loading from '../components/icons/loading.astro';
+
+const metaTags = {
+	title: "Positions on live",
+	description : "live"
+}
+
+const { title, description } = metaTags
 ---
 
-<Layout title="Live race">
+<Layout title={title} description={description}>
     <main>
         <h1>Live</h1>
         <div class="container">

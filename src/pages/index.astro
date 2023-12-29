@@ -1,9 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+
+const metaTags = {
+	title: "Formula 1 Calendar 2024 - F1calendar.live",
+	description : "Formula 1 Calendar 2024, news and more."
+}
+
+const { title, description } = metaTags
 ---
 
-<Layout title="Formula 1 Calendar 2024 - F1calendar.live">
+<Layout title={title}, description={description}>
 	<main>
 		<ul role="list" class="link-card-grid">
 			<Card

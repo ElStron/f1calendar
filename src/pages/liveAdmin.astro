@@ -1,9 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SockAdmin from '../components/SockAdmin.astro';
+const metaTags = {
+	title: "Positions on live",
+	description : "live"
+}
+
+const { title, description } = metaTags
 ---
 
-<Layout title="Live race">
+<Layout title={title} description={description}>
     <main>
         <h1>Live</h1>
         <form action="">
