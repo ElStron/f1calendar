@@ -49,6 +49,7 @@ const { title } = Astro.props;
 		color: var(--color);
 		background: var(--background);
 		font-family: system-ui, sans-serif;
+		margin: 0;
 	}
 
 	body::after {
@@ -97,6 +98,14 @@ const { title } = Astro.props;
     	grid-template-columns: 1fr 374px;
 		grid-gap:24px;
 	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 75%;
+		background-position: 0%;
+	}
+
 	@media (width < 700px)  {
 		.container {
 			grid-template-columns: 1fr ;

@@ -28,6 +28,7 @@ import { SOCKET_URL } from "../consts";
 
     socket.on("events", (events, singleEvent) => {
         if (list) {
+            cronologia.innerHTML = '';
             events.reverse().map((event) => {
                 updateEvents(event);
             })

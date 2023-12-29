@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Sock from '../components/Sock.astro';
 import Table from '../components/Table.astro';
 import FilaTable from '../components/FilaTable.astro';
+import Loading from '../components/icons/loading.astro';
 ---
 
 <Layout title="Live race">
@@ -10,7 +11,7 @@ import FilaTable from '../components/FilaTable.astro';
         <h1>Live</h1>
         <div class="container">
           <section class="onboard">
-            <h2>Positions table.</h2>
+            <h2  class="text-gradient" >Positions table.</h2>
             <Table>
               <FilaTable racerName='Sergio Perez' position='1'/>
               <FilaTable racerName='Lewis Hammilton' position='2'/>
@@ -19,9 +20,10 @@ import FilaTable from '../components/FilaTable.astro';
             </Table>
           </section> 
           <section>
-            <h2>Live Events</h2>
+            <h2  class="text-gradient" >Live Events</h2>
             <div>
               <ul class="crono">
+                <Loading/>
               </ul>
             </div>
           </section>
@@ -35,6 +37,7 @@ import FilaTable from '../components/FilaTable.astro';
         display: grid;
         grid-row-gap: 20px;
         margin-top: 39px;
+        justify-content: center;
     }
     .crono li {
       list-style: none;
