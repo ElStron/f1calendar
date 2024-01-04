@@ -7,11 +7,15 @@ interface Props {
 	image: string;
     date: string;
     results?: boolean;
-    podium?: string[] | undefined;
+    podium?: Podium[];
+}
+export interface Podium {
+  position3: string
+  position2: string
+  position1: string
 }
 
 const { href, title, place, image, date, results, podium } = Astro.props;
-
 ---
 
 <article class="card">
@@ -22,8 +26,19 @@ const { href, title, place, image, date, results, podium } = Astro.props;
         </header>
         <aside class="results">
             {
-                results && podium && podium.map((driver) => {
-                    return <PodiumItem driver={driver}/>
+                results && 
+                podium && 
+                podium.map((driver) => {
+                    if (typeof driver === 'object') {
+                            return (
+                            <>
+                                <PodiumItem driver={driver.position1} />
+                                <PodiumItem driver={driver.position2} />
+                                <PodiumItem driver={driver.position3} />
+                            </>
+                            );
+                        }
+                    return null;
                 })
  
             }
