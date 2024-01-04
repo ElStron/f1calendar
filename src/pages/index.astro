@@ -1,43 +1,35 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import ScheduleCard from '../components/ScheduleCard.astro';
+import DescriptionCard from '../components/DescriptionCard.astro';
+import Calendar from '../../db/calendar/2024.json';
+import Button from '../components/Button.astro';
+
 
 const metaTags = {
 	title: "Formula 1 Calendar 2024 - F1calendar.live",
 	description : "Formula 1 Calendar 2024, news and more."
 }
-
+//console.log(Calendar)
 const { title, description } = metaTags
 ---
 
 <Layout title={title}, description={description}>
 	<main>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="#"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-				img="https://media.formula1.com/image/upload/f_auto/q_auto/v1702396778/fom-website/2023/Miscellaneous/verstappen-title-win-2023-1.png.transform/6col/image.png"
-			/>
-			<Card
-				href="#"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-				img="https://media.formula1.com/image/upload/f_auto/q_auto/v1702413257/fom-website/2023/Post%20season/GettyImages-1746967622.jpg.transform/6col/image.jpg"
-			/>
-			<Card
-				href="#"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-				img='https://media.formula1.com/image/upload/t_16by9North/f_auto/q_auto/v1703269845/fom-website/2023/Miscellaneous/GettyImages-1547196771.jpg.transform/6col/image.jpg'
-			/>
-			<Card
-				href="#"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-				img='https://media.formula1.com/image/upload/t_16by9Centre/f_auto/q_auto/v1701006404/trackside-images/2023/F1_Grand_Prix_of_Abu_Dhabi/1814796523.jpg.transform/6col/image.jpg'
-			/>
-		</ul>
+		<section class="schedule">
+			<DescriptionCard title={"F1 Calendar 2024"} decription={`
+			All the latest news and updates from Formula 1 season 2024. And tabla of positions on live. Results and more.`}>
+				<Button href='/2023'> 🡨 Previus season</Button>
+			</DescriptionCard>
+
+			{
+				Calendar.schedule.map((schedule) => {
+					const href = schedule.place.trim().replace(/\s+/g, '-').toLowerCase()
+					return <ScheduleCard {...schedule} href="#"/>
+				})
+			}
+
+		</section> 
 	</main>
 </Layout>
 
@@ -56,13 +48,8 @@ const { title, description } = metaTags
 		height: auto;
 		z-index: -1;
 	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
+	
+	
 	.instructions {
 		margin-bottom: 2rem;
 		border: 1px solid rgba(var(--accent-light), 25%);
@@ -87,4 +74,5 @@ const { title, description } = metaTags
 		gap: 2rem;
 		padding: 0;
 	}
+
 </style>
