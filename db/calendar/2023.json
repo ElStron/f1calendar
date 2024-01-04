@@ -1,0 +1,329 @@
+{
+    "season": "2023",
+    "schedule": [
+      {
+        "date": "23 -25\n\nFEB",
+        "place": "Sakhir ",
+        "title": "FORMULA 1 ARAMCO PRE-SEASON TESTING 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/races/2023/race-listing/Pre-Season-Testing.jpg.transform/9col/image.jpg",
+        "results": false,
+        "podium": []
+      },
+      {
+        "date": "03-05",
+        "place": "Bahrain ",
+        "title": "FORMULA 1 GULF AIR BAHRAIN GRAND PRIX 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Bahrain%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "ALO",
+            "position2": "PER",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "17-19",
+        "place": "Saudi Arabia ",
+        "title": "FORMULA 1 STC SAUDI ARABIAN GRAND PRIX 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Saudi%20Arabia%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "ALO",
+            "position2": "VER",
+            "position1": "PER"
+          }
+        ]
+      },
+      {
+        "date": "31-02",
+        "place": "Australia ",
+        "title": "FORMULA 1 ROLEX AUSTRALIAN GRAND PRIX 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Australia%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "ALO",
+            "position2": "HAM",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "28-30",
+        "place": "Azerbaijan ",
+        "title": "FORMULA 1 AZERBAIJAN GRAND PRIX 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Azerbaijan%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "LEC",
+            "position2": "VER",
+            "position1": "PER"
+          }
+        ]
+      },
+      {
+        "date": "05-07",
+        "place": "United States ",
+        "title": "FORMULA 1 CRYPTO.COM MIAMI GRAND PRIX 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Miami%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "ALO",
+            "position2": "PER",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "19-21\n\nMAY",
+        "place": "Italy ",
+        "title": "FORMULA 1 QATAR AIRWAYS GRAN PREMIO DEL MADE IN ITALY E DELL'EMILIA-ROMAGNA 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Emilia%20Romagna%20carbon.png.transform/2col/image.png",
+        "results": false,
+        "podium": []
+      },
+      {
+        "date": "26-28",
+        "place": "Monaco ",
+        "title": "FORMULA 1 GRAND PRIX DE MONACO 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Monaco%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "OCO",
+            "position2": "ALO",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "02-04",
+        "place": "Spain ",
+        "title": "FORMULA 1 AWS GRAN PREMIO DE ESPAÑA 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Spain%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "RUS",
+            "position2": "HAM",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "16-18",
+        "place": "Canada ",
+        "title": "FORMULA 1 PIRELLI GRAND PRIX DU CANADA 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Canada%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "HAM",
+            "position2": "ALO",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "30-02",
+        "place": "Austria ",
+        "title": "FORMULA 1 ROLEX GROSSER PREIS VON ÖSTERREICH 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Austria%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "PER",
+            "position2": "LEC",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "07-09",
+        "place": "Great Britain ",
+        "title": "FORMULA 1 ARAMCO BRITISH GRAND PRIX 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Great%20Britain%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "HAM",
+            "position2": "NOR",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "21-23",
+        "place": "Hungary ",
+        "title": "FORMULA 1 QATAR AIRWAYS HUNGARIAN GRAND PRIX 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Hungary%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "PER",
+            "position2": "NOR",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "28-30",
+        "place": "Belgium ",
+        "title": "FORMULA 1 MSC CRUISES BELGIAN GRAND PRIX 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Belgium%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "LEC",
+            "position2": "PER",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "25-27",
+        "place": "Netherlands ",
+        "title": "FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Netherlands%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "GAS",
+            "position2": "ALO",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "01-03",
+        "place": "Italy ",
+        "title": "FORMULA 1 PIRELLI GRAN PREMIO D’ITALIA 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Italy%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "SAI",
+            "position2": "PER",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "15-17",
+        "place": "Singapore ",
+        "title": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Singapore%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "HAM",
+            "position2": "NOR",
+            "position1": "SAI"
+          }
+        ]
+      },
+      {
+        "date": "22-24",
+        "place": "Japan ",
+        "title": "FORMULA 1 LENOVO JAPANESE GRAND PRIX 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Japan%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "PIA",
+            "position2": "NOR",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "06-08",
+        "place": "Qatar ",
+        "title": "FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Qatar%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "NOR",
+            "position2": "PIA",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "20-22",
+        "place": "United States ",
+        "title": "FORMULA 1 LENOVO UNITED STATES GRAND PRIX 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/United%20States%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "SAI",
+            "position2": "NOR",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "27-29",
+        "place": "Mexico ",
+        "title": "FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÉXICO 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Mexico%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "LEC",
+            "position2": "HAM",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "03-05",
+        "place": "Brazil ",
+        "title": "FORMULA 1 ROLEX GRANDE PRÊMIO DE SÃO PAULO 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Brazil%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "ALO",
+            "position2": "NOR",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "16-18",
+        "place": "United States ",
+        "title": "FORMULA 1 HEINEKEN SILVER LAS VEGAS GRAND PRIX 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Las%20Vegas%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "PER",
+            "position2": "LEC",
+            "position1": "VER"
+          }
+        ]
+      },
+      {
+        "date": "24-26",
+        "place": "Abu Dhabi ",
+        "title": "FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2023",
+        "image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Abu%20Dhabi%20carbon.png.transform/2col/image.png",
+        "results": true,
+        "podium": [
+          {
+            "position3": "RUS",
+            "position2": "LEC",
+            "position1": "VER"
+          }
+        ]
+      }
+    ]
+  }
