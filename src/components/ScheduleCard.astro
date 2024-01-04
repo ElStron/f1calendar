@@ -45,7 +45,7 @@ const { href, title, place, image, date, results, podium } = Astro.props;
              
         </aside>
         <picture>
-            <img src={image}>
+            <img src={image} alt={`Ciruit of ${place}`} loading="lazy">
         </picture>
         {
             results ? <footer class="finished">Finished</footer> 

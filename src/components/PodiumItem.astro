@@ -6,7 +6,7 @@ const { driver } = Astro.props
 ---
 
 <div>
-    <img src={`/drivers/${driver}.avif`}>
+    <img src={`/drivers/${driver}.avif`} alt=`Driver ${driver}` loading="lazy">
 </div> 
 
 <style>
