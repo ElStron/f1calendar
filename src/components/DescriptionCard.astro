@@ -1,0 +1,29 @@
+---
+interface Props {
+	title: string;
+    decription: string;
+}
+
+const { title, decription } = Astro.props;
+---
+
+<article class="card">
+    <div class="content">
+        <h1 class="text-gradient">{title}</h1>
+        <p>{decription}</p>
+    </div>
+    <div>
+        <slot />
+    </div>
+</article>
+
+<style>
+    .card>.content {
+        padding: 1.3rem;
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+</style>

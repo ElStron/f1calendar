@@ -1,0 +1,112 @@
+---
+import PodiumItem from './PodiumItem.astro';
+interface Props {
+	title: string;
+    place: string;
+	href?: string;
+	image: string;
+    date: string;
+    results?: boolean;
+    podium?: string[] | undefined;
+}
+
+const { href, title, place, image, date, results, podium } = Astro.props;
+
+---
+
+<article class="card">
+    <a href={href}>
+        <header>
+            <p>{place}</p>
+            <p>{title}</p>
+        </header>
+        <aside class="results">
+            {
+                results && podium && podium.map((driver) => {
+                    return <PodiumItem driver={driver}/>
+                })
+ 
+            }
+             
+        </aside>
+        <picture>
+            <img src={image}>
+        </picture>
+        {
+            results ? <footer class="finished">Finished</footer> 
+            : <footer><time class="date">{date}</time></footer>
+        }
+    </a>
+</article>
+
+<style>
+    .card>a {
+        display:grid;
+        grid-template-areas: "header header" "aside picture" "aside footer";
+        grid-template-rows: auto 205px auto;
+        grid-gap: 15px;
+        background-color: #13131b;
+        border-radius: 10px;
+        border: solid 1px #ffffff17;
+        overflow: hidden;
+        box-shadow:  20px 20px 60px #101017, 
+             -20px -20px 60px #16161f;
+    }
+
+    .card>a>header, .card>a>aside {
+        padding: 17px;
+        
+    }    
+    .card>a>header {
+        grid-area: header;
+        border-bottom: solid 1px #ffffff17;
+    }
+    .card>a>footer.finished {
+        padding-right: 17px;
+        background: #ff535354;
+    }
+    .card>a:hover {
+        background-color: rgb(19 21 26 / 28%);
+        transform: scale(1.02);
+        transition: 0.3s;
+    }
+    .card>a>header>p:first-child {
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+    .card>a>header>p:last-child {
+        font-size: 0.75rem;
+        color: rgb(255 255 255 / 75%);
+    }
+    .card>a>figure {
+        grid-area: picture;
+    }
+    img {
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .card>a>aside.results {
+        grid-area: aside;
+        display: grid;
+        align-items: center;
+        grid-row-gap: 10px;
+    }
+    
+    .card>a>footer {
+        grid-area: footer;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        background-color: #9e9e9e36;
+        border-radius: 50px 0 0 0;
+    }
+    time.date {
+        padding-right: 15px;
+        font-weight: 700;  
+        color: rgb(255 255 255 / 75%);
+    }
+    
+</style>
