@@ -3,38 +3,41 @@ import { SOCKET_URL } from "../consts";
 ---
 <div class="socketURL" data-url={SOCKET_URL}></div>
 <script type="module">
-    import { io } from "https://cdn.socket.io/4.6.2/socket.io.esm.min.js" 
-    const socket = io(document.querySelector('.socketURL').dataset.url, {
-        transports: ["websocket"],
+    import { io } from "https://cdn.socket.io/4.6.2/socket.io.esm.min.js"
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        const socketURL = document.querySelector('.socketURL').dataset.url;
+        const socket = io(socketURL, {
+            transports: ["websocket"],
+        });
+
+        const cronologia = document.querySelector('.crono');
+        let list = true;
+
+        const updateEvents = (data) => {
+            const position = Math.round(data.position);
+            const typeChangeEvent = data.changeType === 'up' ? 'won' : 'lost';
+            const iconPosition = data.changeType === 'up' ? '▲' : '▼';
+            const leader = Number(position) === 1 ? `${data.racer} is a new leader` : '';
+
+            const newEvent = `<li> 
+                                <span class="iconEvent${data.changeType}">${iconPosition}</span> 
+                                ${data.racer} ${typeChangeEvent} a position. New position is ${position}. 
+                                <strong>${leader}</strong>
+                            </li>`;
+
+            cronologia.insertAdjacentHTML('afterbegin', newEvent);
+        };
+
+        socket.on("events", (events, singleEvent) => {
+            if (list) {
+                cronologia.innerHTML = '';
+                events.reverse().forEach(updateEvents);
+                list = false;
+            }
+            if (singleEvent) updateEvents(singleEvent);
+        });
     });
 
-    const cronologia = document.querySelector('.crono');
-    let list = true;
-
-    const updateEvents = (data) => {
-
-        const typeChangeEvent = data.changeType === 'up' ? 'won' : 'lost';
-        const iconPosition = data.changeType === 'up' ? '<span class="iconEventUp">▲</span>' : '<span class="iconEventDown">▼</span>';
-        let leader = "";
-        if(Number(data.position) === 1 ) {
-            leader = `${data.racer} is a new leader`;
-        }
-        const newEvent = `<li> ${iconPosition} ${data.racer} ${typeChangeEvent} a position. 
-            New position is ${data.position}. <strong>${leader}</strong></li>`;
-        
-        cronologia.insertAdjacentHTML('afterbegin',newEvent);
-        
-    } 
-
-    socket.on("events", (events, singleEvent) => {
-        if (list) {
-            cronologia.innerHTML = '';
-            events.reverse().map((event) => {
-                updateEvents(event);
-            })
-            list = false
-        }
-        if(singleEvent) updateEvents(singleEvent);
-    })
 
 </script>
