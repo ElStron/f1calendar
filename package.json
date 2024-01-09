@@ -1,23 +1,16 @@
 {
-  "name": "calendar",
+  "name": "f1calenda-v2",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "ser": "node --watch ./server/index.js",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.3.4",
     "@fontsource-variable/inter": "^5.0.16",
-    "@libsql/client": "0.4.0-pre.5",
-    "astro": "^4.0.7",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "morgan": "1.10.0",
-    "socket.io": "4.7.2"
+    "astro": "^4.1.1"
   }
 }
