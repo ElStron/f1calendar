@@ -1,8 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import ScheduleCard from "../components/ScheduleCard.astro";
-import DescriptionCard from "../components/DescriptionCard.astro";
-import Button from "../components/Button.astro";
+import Layout from "@layouts/Layout.astro";
+import ScheduleCard from "@components/ScheduleCard.astro";
+import DescriptionCard from "@components/DescriptionCard.astro";
+import Button from "@components/Button.astro";
+import ArrowRight from "@icons/ArrowRight.astro";
+import ArrowLeft from "@icons/ArrowLeft.astro";
 
 interface Props {
 data?: data | undefined;
@@ -47,11 +49,16 @@ const nextSeason = response.find((item) => item.season === String(Number(season)
             <DescriptionCard title={"F1 Schedule " + season} decription={`
             All the latest news and updates from Formula 1 season ${season}. And tabla of positions on live. Results and more.`}>
                 {
-                    previusSeason && <Button href={`/${previusSeason.season}`}> 🡨 Previus season</Button>
+                    previusSeason && <Button href={`/${previusSeason.season}`}>
+                        <ArrowLeft/>
+                        Previus season</Button>
                     
                 }
                 {
-                    nextSeason && <Button href={`/${nextSeason.season}`}> Next season 🡪</Button>
+                    nextSeason && <Button href={`/${nextSeason.season}`}>
+                         Next season 
+                         <ArrowRight/>
+                         </Button>
                 }
             </DescriptionCard>  
             {

@@ -1,6 +1,12 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@icons/*": ["src/components/icons/*"],
+      "@layouts/*": ["src/layouts/*"]
+    }
   }
 }

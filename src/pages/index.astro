@@ -1,9 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ScheduleCard from '../components/ScheduleCard.astro';
-import DescriptionCard from '../components/DescriptionCard.astro';
+import Layout from '@layouts/Layout.astro';
+import ScheduleCard from '@components/ScheduleCard.astro';
+import DescriptionCard from '@components/DescriptionCard.astro';
 import data from '../../db/calendar/2024.json';
-import Button from '../components/Button.astro';
+import Button from '@components/Button.astro';
+import ArrowLeft from '@icons/ArrowLeft.astro';
 
 
 const metaTags = {
@@ -19,7 +20,10 @@ const { title, description, season } = metaTags
 		<section class="schedule">
 			<DescriptionCard title={"F1 Calendar 2024"} decription={`
 			All the latest news and updates from Formula 1 season 2024. And tabla of positions on live. Results and more.`}>
-				<Button href='/2023'> 🡨 Previus season</Button>
+				<Button href='/2023'>
+					<ArrowLeft/>
+					Previus season
+				</Button>
 			</DescriptionCard>
 
 			{
