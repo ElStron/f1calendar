@@ -8,10 +8,11 @@ import Button from '../components/Button.astro';
 
 const metaTags = {
 	title: "Formula 1 Calendar 2024 - F1calendar.live",
-	description : "Formula 1 Calendar 2024, news and more."
+	description : "Formula 1 Calendar 2024, news and more.",
+	season: "2024"
 }
 //console.log(Calendar)
-const { title, description } = metaTags
+const { title, description, season } = metaTags
 ---
 
 <Layout title={title}, description={description}>
@@ -25,7 +26,7 @@ const { title, description } = metaTags
 			{
 				Calendar.schedule.map((schedule) => {
 					const href = schedule.place.trim().replace(/\s+/g, '-').toLowerCase()
-					return <ScheduleCard {...schedule} href="#"/>
+					return <ScheduleCard {...schedule} href={`${season}/${href}`}/>
 				})
 			}
 
