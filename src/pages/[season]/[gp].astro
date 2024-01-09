@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/Button.astro";
+
+export async function getStaticPaths() {
+    
+    const cleanGp = (gp) => {
+        return gp.trim().replace(/\s+/g, '-').toLowerCase()
+    }
+    const response = await Astro.glob(`../../../db/calendar/*.json`);
+    return response.flatMap((season) => {
+        return season.schedule.map((gp) => ({
+            params: { season: season.season, gp: cleanGp(gp.place) },
+            props: { data:gp },
+        }))
+	});
+
+}
+
+const { gp, season } = Astro.params
+const { data } = Astro.props
+console.log(data)
+---
+<Layout title={data.place} description={data.title}>
+    <main>
+        <Button href={`/${season}`}><span>🡨 back</span></Button>
+        <h1> {data.place} Grand Prix {season}</h1>
+    </main>
+</Layout>
