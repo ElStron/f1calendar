@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ScheduleCard from '../components/ScheduleCard.astro';
 import DescriptionCard from '../components/DescriptionCard.astro';
-import Calendar from '../../db/calendar/2024.json';
+import data from '../../db/calendar/2024.json';
 import Button from '../components/Button.astro';
 
 
@@ -11,7 +11,6 @@ const metaTags = {
 	description : "Formula 1 Calendar 2024, news and more.",
 	season: "2024"
 }
-//console.log(Calendar)
 const { title, description, season } = metaTags
 ---
 
@@ -24,7 +23,7 @@ const { title, description, season } = metaTags
 			</DescriptionCard>
 
 			{
-				Calendar.schedule.map((schedule) => {
+				data.schedule.map((schedule) => {
 					const href = schedule.place.trim().replace(/\s+/g, '-').toLowerCase()
 					return <ScheduleCard {...schedule} href={`${season}/${href}`}/>
 				})
