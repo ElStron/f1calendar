@@ -4,8 +4,8 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
       "@icons/*": ["src/components/icons/*"],
+      "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"]
     }
   }
