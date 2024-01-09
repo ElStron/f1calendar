@@ -18,5 +18,17 @@ const { href } = Astro.props;
         margin: 18px;
         font-weight: 300;
         font-size: medium;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        max-width: 200px;
+        text-wrap: nowrap;
+    }
+    .button:hover {
+        background-color: #8f6bff;
+        transform: scale(1.02);
+        transition: 0.3s;
+        cursor: pointer;  
     }
 </style>
