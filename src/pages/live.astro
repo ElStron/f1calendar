@@ -14,28 +14,26 @@ const { title, description } = metaTags
 ---
 
 <Layout title={title} description={description}>
-    <main>
-        <h1>Live</h1>
-        <div class="container">
-          <section class="onboard">
-            <h2  class="text-gradient" >Positions table.</h2>
-            <Table>
-              <FilaTable racerName='Sergio Perez' position='1'/>
-              <FilaTable racerName='Lewis Hammilton' position='2'/>
-              <FilaTable racerName='Max Verstapem' position='3'/>
-              <FilaTable racerName='Ocon Nos' position='4'/>
-            </Table>
-          </section> 
-          <section>
-            <h2  class="text-gradient" >Live Events</h2>
-            <div class="events-container">
-              <ul class="crono">
-                <Loading/>
-              </ul>
-            </div>
-          </section>
-        </div>
-    </main>
+  <h1>Live</h1>
+  <div class="container">
+    <section class="onboard">
+      <h2  class="text-gradient" >Positions table.</h2>
+      <Table>
+        <FilaTable racerName='Sergio Perez' position='1'/>
+        <FilaTable racerName='Lewis Hammilton' position='2'/>
+        <FilaTable racerName='Max Verstapem' position='3'/>
+        <FilaTable racerName='Ocon Nos' position='4'/>
+      </Table>
+    </section> 
+    <section>
+      <h2  class="text-gradient" >Live Events</h2>
+      <div class="events-container">
+        <ul class="crono">
+          <Loading/>
+        </ul>
+      </div>
+    </section>
+  </div>
 </Layout>
 <Sock />
 
@@ -56,15 +54,15 @@ const { title, description } = metaTags
       background: rgb(0 188 212 / 11%);
       border: solid 1px rgb(0 188 212 / 17%);
     }
-    .iconEventUp {
+    .iconEventup {
       color: #4caf50;
     }
 
-    .iconEventDown {
+    .iconEventdown {
       color: #E91E63;
     }
 
-    .iconEventDown, .iconEventUp {
+    .iconEventup, .iconEventup {
       padding: 10px;
     }
 

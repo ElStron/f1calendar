@@ -44,29 +44,27 @@ const nextSeason = response.find((item) => item.season === String(Number(season)
     title={"Formula 1 Calendar " + season}
     description={"Formula 1 Calendar " + season}
 >
-    <main>
-        <section class="schedule">
-            <DescriptionCard title={"F1 Schedule " + season} decription={`
-            All the latest news and updates from Formula 1 season ${season}. And tabla of positions on live. Results and more.`}>
-                {
-                    previusSeason && <Button href={`/${previusSeason.season}`}>
-                        <ArrowLeft/>
-                        Previus season</Button>
-                    
-                }
-                {
-                    nextSeason && <Button href={`/${nextSeason.season}`}>
-                         Next season 
-                         <ArrowRight/>
-                         </Button>
-                }
-            </DescriptionCard>  
+    <section class="schedule">
+        <DescriptionCard title={"F1 Schedule " + season} decription={`
+        All the latest news and updates from Formula 1 season ${season}. And tabla of positions on live. Results and more.`}>
             {
-				data?.schedule?.map((schedule: Schedule) => {
-					const href = schedule.place.trim().replace(/\s+/g, '-').toLowerCase()
-					return <ScheduleCard {...schedule} href={`/${season}/${href}`}/>
-				})
-			}
-        </section> 
-    </main>
+                previusSeason && <Button href={`/${previusSeason.season}`}>
+                    <ArrowLeft/>
+                    Previus season</Button>
+                
+            }
+            {
+                nextSeason && <Button href={`/${nextSeason.season}`}>
+                        Next season 
+                        <ArrowRight/>
+                        </Button>
+            }
+        </DescriptionCard>  
+        {
+            data?.schedule?.map((schedule: Schedule) => {
+                const href = schedule.place.trim().replace(/\s+/g, '-').toLowerCase()
+                return <ScheduleCard {...schedule} href={`/${season}/${href}`}/>
+            })
+        }
+    </section> 
 </Layout>

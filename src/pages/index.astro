@@ -16,25 +16,23 @@ const { title, description, season } = metaTags
 ---
 
 <Layout title={title}, description={description}>
-	<main>
-		<section class="schedule">
-			<DescriptionCard title={"F1 Calendar 2024"} decription={`
-			All the latest news and updates from Formula 1 season 2024. And tabla of positions on live. Results and more.`}>
-				<Button href='/2023'>
-					<ArrowLeft/>
-					Previus season
-				</Button>
-			</DescriptionCard>
+	<section class="schedule">
+		<DescriptionCard title={"F1 Calendar 2024"} decription={`
+		All the latest news and updates from Formula 1 season 2024. And tabla of positions on live. Results and more.`}>
+			<Button href='/2023'>
+				<ArrowLeft/>
+				Previus season
+			</Button>
+		</DescriptionCard>
 
-			{
-				data.schedule.map((schedule) => {
-					const href = schedule.place.trim().replace(/\s+/g, '-').toLowerCase()
-					return <ScheduleCard {...schedule} href={`${season}/${href}`}/>
-				})
-			}
+		{
+			data.schedule.map((schedule) => {
+				const href = schedule.place.trim().replace(/\s+/g, '-').toLowerCase()
+				return <ScheduleCard {...schedule} href={`${season}/${href}`}/>
+			})
+		}
 
-		</section> 
-	</main>
+	</section> 
 </Layout>
 
 <style>
