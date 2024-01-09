@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ScheduleCard from "../components/ScheduleCard.astro";
+import DescriptionCard from "../components/DescriptionCard.astro";
+import Button from "../components/Button.astro";
+
+interface Props {
+data?: data | undefined;
+}
+
+export interface data {
+    season: string | null;
+    schedule: Schedule[] | null;
+}
+ export interface Schedule {
+	title: string;
+    place: string;
+	href?: string;
+	image: string;
+    date: string;
+    results?: boolean;
+}
+export async function getStaticPaths() {
+    const season = ['2024', '2023']
+
+    return season.map((post) => ({
+        params: { season: post },
+    }));
+
+}
+
+const { season } = Astro.params
+const response = await Astro.glob(`../../db/calendar/*.json`);
+const data = response.find((item) => item.season === season);
+
+const previusSeason = response.find((item) => item.season === String(Number(season) - 1))
+const nextSeason = response.find((item) => item.season === String(Number(season) + 1))
+
+---
+
+<Layout
+    title={"Formula 1 Calendar " + season}
+    description={"Formula 1 Calendar " + season}
+>
+    <main>
+        <section class="schedule">
+            <DescriptionCard title={"F1 Schedule " + season} decription={`
+            All the latest news and updates from Formula 1 season ${season}. And tabla of positions on live. Results and more.`}>
+                {
+                    previusSeason && <Button href={`/${previusSeason.season}`}> 🡨 Previus season</Button>
+                    
+                }
+                {
+                    nextSeason && <Button href={`/${nextSeason.season}`}> Next season 🡪</Button>
+                }
+            </DescriptionCard>  
+            {
+				data?.schedule?.map((schedule: Schedule) => {
+					const href = schedule.place.trim().replace(/\s+/g, '-').toLowerCase()
+					return <ScheduleCard {...schedule} href={`/${season}/${href}`}/>
+				})
+			}
+        </section> 
+    </main>
+</Layout>
